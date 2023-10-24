@@ -15,8 +15,10 @@ public class ParticleSystem {
   }
 
   public void addParticle() {
-    for(int i=0; i<1; i++) {
-      parts.add(new Particle(origin.clone(), Vec2.fromRandom(5)));
+    if(Math.random() > 0.5) {
+      parts.add(new SquareParticle(origin.clone(), Vec2.fromRandom(5)));
+    } else {
+      parts.add(new RainbowParticle(origin.clone(), Vec2.fromRandom(5)));
     }
   }
 
