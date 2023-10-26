@@ -13,7 +13,7 @@ public class RainbowParticle extends RoundParticle {
 
   @Override
   public void update() {
-    this.pos.moveThis(this.vel);
+    super.update();
     this.col = Color.hsb(hue, 0.8, 0.8);
     hue += 1;
   }

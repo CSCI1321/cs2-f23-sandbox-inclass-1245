@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -37,15 +38,20 @@ public class ParticleApp extends Application {
       }
     });
     
+    Image starImg = new Image("file:star.png");
+    System.out.println(starImg.getHeight());
 
     AnimationTimer timer = new AnimationTimer() {
       public void handle(long t) {
         g.setFill(Color.BLACK);
         g.fillRect(0,0,600,600);
+
+        //g.drawImage(starImg, 0, 0, 500,200);
+
         for(ParticleSystem ps : lst) {
           ps.display(g);
           ps.update();
-          ps.addParticle();
+          ps.addParticle(starImg);
         }
       }
     };
