@@ -4,7 +4,7 @@ import cs2.util.Vec2;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 
-public abstract class Particle {
+public abstract class Particle implements Displayable {
   protected Vec2 pos, vel;
   protected double sz;
   protected Color col;
@@ -15,10 +15,13 @@ public abstract class Particle {
     sz = 50;
     col = Color.ORANGERED;
   }
-
-  public abstract void display(GraphicsContext g);
-
   public void update() {
     this.pos.moveThis(this.vel);
   }
+
+  public void addForce(Vec2 force) {
+    this.vel.moveThis(force);
+  }
+
+
 }

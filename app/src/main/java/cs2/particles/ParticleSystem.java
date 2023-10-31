@@ -40,5 +40,10 @@ public class ParticleSystem {
       p.update();
     }
   }
+  public void addForce(Vec2 force) {
+    for(Particle p : parts) {
+      p.addForce(force);
+    }
+  }
   
 }

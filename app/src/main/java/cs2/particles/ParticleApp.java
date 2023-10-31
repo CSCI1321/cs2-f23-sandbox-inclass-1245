@@ -41,17 +41,20 @@ public class ParticleApp extends Application {
     Image starImg = new Image("file:star.png");
     System.out.println(starImg.getHeight());
 
+    Background bg = new Background();
+
     AnimationTimer timer = new AnimationTimer() {
       public void handle(long t) {
-        g.setFill(Color.BLACK);
-        g.fillRect(0,0,600,600);
-
+        //g.setFill(Color.BLACK);
+        //g.fillRect(0,0,600,600);
         //g.drawImage(starImg, 0, 0, 500,200);
+        bg.display(g);
 
         for(ParticleSystem ps : lst) {
           ps.display(g);
           ps.update();
           ps.addParticle(starImg);
+          ps.addForce(new Vec2(0,1));
         }
       }
     };

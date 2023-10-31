@@ -8,7 +8,7 @@ public class RoundParticle extends Particle {
   public RoundParticle(Vec2 p, Vec2 v) {
     super(p,v);
   }
-  
+
   public void display(GraphicsContext g) {
     g.setFill(this.col);
     g.fillOval(pos.getX(), pos.getY(), sz,sz);
