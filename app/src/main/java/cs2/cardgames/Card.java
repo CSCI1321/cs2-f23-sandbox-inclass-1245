@@ -1,6 +1,6 @@
 package cs2.cardgames;
 
-public class Card {
+public class Card implements Comparable<Card> {
 	//Constants
 	public static final int SPADE = 0;
 	public static final int HEART = 1;

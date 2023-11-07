@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
@@ -32,8 +33,9 @@ public class ParticleApp extends Application {
       lst.add(new ParticleSystem(new Vec2(e.getX(), e.getY())));
     });
 
-    canvas.setOnKeyTyped((KeyEvent e) -> {
-      if(e.getCharacter().equals(" ")) {
+    canvas.setOnKeyPressed((KeyEvent e) -> {
+      if(e.getCode() == KeyCode.SPACE) {
+      //if(e.getCharacter().equals(" ")) {
         lst.clear();
       }
     });
