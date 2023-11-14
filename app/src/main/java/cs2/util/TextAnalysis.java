@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Scanner;
 
 public class TextAnalysis {
@@ -70,6 +71,12 @@ public class TextAnalysis {
         System.out.println(key + ": " + tempestMap.get(key));
       }
     }
+    /*
+    for(Map.Entry<String,Integer> entr : tempestMap) {
+      if(entr.getValue() > 100) {
+        System.out.println(entr.getKey());
+      }
+    }*/
 
 
     /*
