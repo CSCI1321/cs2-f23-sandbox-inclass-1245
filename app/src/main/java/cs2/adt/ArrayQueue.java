@@ -14,6 +14,12 @@ public class ArrayQueue<T> implements Queue<T> {
   public void enqueue(T item) {
     if(len == arr.length) {
       //Allocate more space
+      T[] tmp = (T[])new Object[len*2];
+      for(int i=0; i<len; i++) {
+        tmp[i] = arr[(beg + i) % arr.length];
+      }
+      arr = tmp;
+      beg = 0;
     }
     arr[(beg + len) % arr.length] = item;
     len++;

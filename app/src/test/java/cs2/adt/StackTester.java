@@ -12,7 +12,7 @@ public class StackTester {
 
   @BeforeEach
   public void init() {
-    stk = new ArrayStack<Integer>();
+    stk = new LinkedStack<Integer>();
   }
 
   @Test
