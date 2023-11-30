@@ -18,12 +18,20 @@ public class LinkedQueue<T> implements Queue<T> {
   }
 
   public void enqueue(T item) {
-    tail.next = new Node(item, null);
-    tail = tail.next;
+    if(isEmpty()) {
+      head = new Node(item, null);
+      tail = head;
+    } else {
+      tail.next = new Node(item, null);
+      tail = tail.next;
+    }
   }
   public T dequeue() {
     T tmp = head.data;
     head = head.next;
+    if(head == null) {
+      tail = null;
+    }
     return tmp;
   }
   public T peek() {
